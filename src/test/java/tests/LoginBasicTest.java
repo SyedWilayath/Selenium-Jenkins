@@ -34,6 +34,7 @@ public class LoginBasicTest {
 		// System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_FULL_PATH);
 		WebDriverManager.edgedriver().setup();
 		driver = new EdgeDriver();
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		// WebDriverWait wait = new WebDriverWait(driver, 30);
 		//System.setProperty("webdriver.gecko.driver", GECKO_DRIVER_FULL_PATH);
 		//driver = new FirefoxDriver();
