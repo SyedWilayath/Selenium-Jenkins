@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -31,8 +32,8 @@ public class LoginBasicTest {
 	@BeforeTest
 	public void setUp() {
 		// System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_FULL_PATH);
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
+		WebDriverManager.edgedriver().setup();
+		driver = new EdgeDriver();
 		// WebDriverWait wait = new WebDriverWait(driver, 30);
 		//System.setProperty("webdriver.gecko.driver", GECKO_DRIVER_FULL_PATH);
 		//driver = new FirefoxDriver();
