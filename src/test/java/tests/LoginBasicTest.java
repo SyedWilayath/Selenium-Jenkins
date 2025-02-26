@@ -26,15 +26,15 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  */
 public class LoginBasicTest {
 	//IMPORTANT: Please download a Chrome driver and set this variable to the full path to the file
-	// private final static String CHROME_DRIVER_FULL_PATH = "chromedriver.exe";
+	private final static String CHROME_DRIVER_FULL_PATH = "chromedriver.exe";
 	//private final static String GECKO_DRIVER_FULL_PATH = "/Users/leonardolanni/Downloads/geckodriver";
 	
 	private WebDriver driver;
 
 	@BeforeTest
 	public void setUp() {
-		// System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_FULL_PATH);
-		WebDriverManager.chromedriver().setup();
+		System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_FULL_PATH);
+		// WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		// WebDriverWait wait = new WebDriverWait(driver, 30);
