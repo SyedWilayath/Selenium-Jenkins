@@ -26,7 +26,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  */
 public class LoginBasicTest {
 	//IMPORTANT: Please download a Chrome driver and set this variable to the full path to the file
-	private final static String CHROME_DRIVER_FULL_PATH = "chromedriver.exe";
+	private final static String CHROME_DRIVER_FULL_PATH = "D:\Personal\CI-CD\docker2\workspace\Selenium\chromedriver.exe";
 	//private final static String GECKO_DRIVER_FULL_PATH = "/Users/leonardolanni/Downloads/geckodriver";
 	
 	private WebDriver driver;
