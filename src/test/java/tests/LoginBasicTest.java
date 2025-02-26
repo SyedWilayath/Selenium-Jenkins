@@ -26,7 +26,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  */
 public class LoginBasicTest {
 	//IMPORTANT: Please download a Chrome driver and set this variable to the full path to the file
-	private final static String CHROME_DRIVER_FULL_PATH = "/var/jenkins_home/workspace/Selenium/chromedriver";
+	private final static String CHROME_DRIVER_FULL_PATH = System.getenv("webdriver.chrome.driver");
 	//private final static String GECKO_DRIVER_FULL_PATH = "/Users/leonardolanni/Downloads/geckodriver";
 	
 	private WebDriver driver;
