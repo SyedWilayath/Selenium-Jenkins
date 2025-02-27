@@ -26,7 +26,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  */
 public class LoginBasicTest {
 	//IMPORTANT: Please download a Chrome driver and set this variable to the full path to the file
-	private final static String CHROME_DRIVER_FULL_PATH = System.getenv("CHROME_DRIVER_FULL_PATH");
+	private final static String CHROME_DRIVER_FULL_PATH = "chromedriver.exe";
 	//private final static String GECKO_DRIVER_FULL_PATH = "/Users/leonardolanni/Downloads/geckodriver";
 	
 	private WebDriver driver;
@@ -36,7 +36,7 @@ public class LoginBasicTest {
 		System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_FULL_PATH);
 		// WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(500, TimeUnit.SECONDS);
 		// WebDriverWait wait = new WebDriverWait(driver, 30);
 		//System.setProperty("webdriver.gecko.driver", GECKO_DRIVER_FULL_PATH);
 		//driver = new FirefoxDriver();
