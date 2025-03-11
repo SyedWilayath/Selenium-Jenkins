@@ -39,7 +39,7 @@ public class LoginBasicTest {
 		
 		DesiredCapabilities cap = new DesiredCapabilities();
 		
-		cap.setPlatform(Platform.LINUX);
+		cap.setPlatform(Platform.ANY);
 		cap.setBrowserName("chrome");
 		
 		driver = new RemoteWebDriver(new URL(huburl), cap);
