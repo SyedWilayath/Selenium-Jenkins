@@ -1,13 +1,18 @@
 package tests;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -24,25 +29,21 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * So this has to be changed accordingly
  */
 public class LoginBasicTest {
-	// IMPORTANT: Please download a Chrome driver and set this variable to the full
-	// path to the file
-	private final static String CHROME_DRIVER_FULL_PATH = "chromedriver.exe";
 
-	// private final static String GECKO_DRIVER_FULL_PATH =
-	// "/Users/leonardolanni/Downloads/geckodriver";
 
 	private WebDriver driver;
 
 	@BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_FULL_PATH);
-		WebDriverManager.edgedriver().setup();
-		driver = new EdgeDriver();
+	public void setUp() throws MalformedURLException {
+		String huburl = "http://localhost:4444/wd/hub";
+		
+		DesiredCapabilities cap = new DesiredCapabilities();
+		
+		cap.setPlatform(Platform.LINUX);
+		cap.setBrowserName("chrome");
+		
+		driver = new RemoteWebDriver(new URL(huburl), cap);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-
-		// WebDriverWait wait = new WebDriverWait(driver, 30);
-		// System.setProperty("webdriver.gecko.driver", GECKO_DRIVER_FULL_PATH);
-		// driver = new FirefoxDriver();
 	}
 
 	@AfterTest
